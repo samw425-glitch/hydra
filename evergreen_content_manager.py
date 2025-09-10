@@ -1,65 +1,110 @@
 #!/usr/bin/env python3
 """
-Evergreen Content Manager
-Auto-posting + DB self-healing + logging
+evergreen_content_manager.py
+Termux-ready content manager:
+- Auto-posts every 10 min
+- Logs actions
+- Saves posts in SQLite
+- Supports multiple modes: --view, --logs, --reload
 """
 
 import sqlite3
-import os
 import time
+import random
+import subprocess
+import os
+import sys
 from datetime import datetime
 
-DB_PATH = "evergreen_content_manager.db"
+DB_FILE = "evergreen.db"
 
-# --- Step 1: Ensure DB schema exists ---
 def init_db():
-    schema = """
-    CREATE TABLE IF NOT EXISTS posts (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        title TEXT NOT NULL,
-        content TEXT NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        posted INTEGER DEFAULT 0
-    );
-
-    CREATE TABLE IF NOT EXISTS logs (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        message TEXT NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
-    """
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    cursor.executescript(schema)
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS posts (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            content TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            action TEXT,
+            timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
     conn.commit()
     conn.close()
     print("✅ Database ready (posts, logs)")
 
-# --- Step 2: Logging helper ---
-def log_message(message: str):
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    cursor.execute("INSERT INTO logs (message) VALUES (?)", (message,))
+def log_action(action):
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+    cur.execute("INSERT INTO logs (action) VALUES (?)", (action,))
     conn.commit()
     conn.close()
-    print(f"[{datetime.now()}] {message}")
 
-# --- Step 3: Example workflow (stub) ---
-def auto_post():
-    # Example demo post (replace with your automation logic)
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    cursor.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
-                   ("Demo Title", "This is a demo content post."))
+def add_post(content):
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+    cur.execute("INSERT INTO posts (content) VALUES (?)", (content,))
     conn.commit()
     conn.close()
-    log_message("📢 Demo post added to DB.")
+    log_action(f"Post added: {content[:30]}...")
+    print(f"[{datetime.now()}] 📢 {content}")
 
-# --- Main loop ---
+def view_posts(limit=10):
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+    cur.execute("SELECT id, content, created_at FROM posts ORDER BY created_at DESC LIMIT ?", (limit,))
+    rows = cur.fetchall()
+    conn.close()
+
+    if not rows:
+        print("📭 No posts yet.")
+        return
+
+    print("\n📜 Last posts:\n")
+    for r in rows:
+        print(f"📝 {r[1]} (added {r[2]})")
+
+def view_logs(limit=10):
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+    cur.execute("SELECT id, action, timestamp FROM logs ORDER BY timestamp DESC LIMIT ?", (limit,))
+    rows = cur.fetchall()
+    conn.close()
+
+    if not rows:
+        print("📭 No logs yet.")
+        return
+
+    print("\n📒 Last logs:\n")
+    for r in rows:
+        print(f"🔖 {r[1]} (at {r[2]})")
+
+def reload_script():
+    print("♻️ Reloading script...")
+    python_exec = sys.executable
+    os.execv(python_exec, [python_exec] + sys.argv)
+
+def main():
+    print(f"[{datetime.now()}] 🚀 Evergreen Content Manager started")
+    while True:
+        # Example demo post — replace with your real rotation logic
+        post_content = "Demo post"
+        add_post(post_content)
+        time.sleep(600)  # 10 minutes
+
 if __name__ == "__main__":
     init_db()
-    log_message("🚀 Evergreen Content Manager started")
-
-    while True:
-        auto_post()
-        time.sleep(600)  # every 10 minutes
+    if "--view" in sys.argv:
+        view_posts()
+    elif "--logs" in sys.argv:
+        view_logs()
+    elif "--reload" in sys.argv:
+        reload_script()
+    else:
+        main()
