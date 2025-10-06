@@ -1,0 +1,16 @@
+{
+  "name": "hydra",
+  "version": "1.0.0",
+  "description": "Hydra is a Docker-based orchestration system that manages multiple service templates including landing pages, background workers, and API services.",
+  "main": "hydra-spawner.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "get-port": "^7.1.0"
+  }
+}
