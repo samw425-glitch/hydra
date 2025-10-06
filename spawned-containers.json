@@ -1,0 +1,414 @@
+[
+  {
+    "containerName": "hydra-english-grammar-basics",
+    "port": 30000
+  },
+  {
+    "containerName": "hydra-advanced-startup-marketing-strategies",
+    "port": 30001
+  },
+  {
+    "containerName": "hydra-docker-container-tips",
+    "port": 30002
+  },
+  {
+    "containerName": "hydra-ai-tools-for-productivity",
+    "port": 30003
+  },
+  {
+    "containerName": "hydra-remote-work-best-practices",
+    "port": 30004
+  },
+  {
+    "containerName": "hydra-marketing-automation-workflows",
+    "port": 30005
+  },
+  {
+    "containerName": "hydra-e-commerce-seo-tactics",
+    "port": 30006
+  },
+  {
+    "containerName": "hydra-digital-advertising-trends-2025",
+    "port": 30007
+  },
+  {
+    "containerName": "hydra-python-scripting-for-beginners",
+    "port": 30008
+  },
+  {
+    "containerName": "hydra-chatgpt-ai-copywriting",
+    "port": 30009
+  },
+  {
+    "containerName": "hydra-content-marketing-for-saas",
+    "port": 30010
+  },
+  {
+    "containerName": "hydra-affiliate-marketing-secrets",
+    "port": 30011
+  },
+  {
+    "containerName": "hydra-time-management-hacks",
+    "port": 30012
+  },
+  {
+    "containerName": "hydra-no-code-tools-for-startups",
+    "port": 30013
+  },
+  {
+    "containerName": "hydra-cybersecurity-essentials",
+    "port": 30014
+  },
+  {
+    "containerName": "hydra-data-analysis-with-python",
+    "port": 30015
+  },
+  {
+    "containerName": "hydra-email-marketing-campaigns",
+    "port": 30016
+  },
+  {
+    "containerName": "hydra-ux-design-tips",
+    "port": 30017
+  },
+  {
+    "containerName": "hydra-social-media-growth-strategies",
+    "port": 30018
+  },
+  {
+    "containerName": "hydra-freelancing-tips-for-beginners",
+    "port": 30019
+  },
+  {
+    "containerName": "hydra-virtual-team-management",
+    "port": 30020
+  },
+  {
+    "containerName": "hydra-business-analytics-basics",
+    "port": 30021
+  },
+  {
+    "containerName": "hydra-ai-in-healthcare",
+    "port": 30022
+  },
+  {
+    "containerName": "hydra-productivity-apps-comparison",
+    "port": 30023
+  },
+  {
+    "containerName": "hydra-startup-funding-strategies",
+    "port": 30024
+  },
+  {
+    "containerName": "hydra-cloud-computing-essentials",
+    "port": 30025
+  },
+  {
+    "containerName": "hydra-machine-learning-for-beginners",
+    "port": 30026
+  },
+  {
+    "containerName": "hydra-seo-copywriting-tips",
+    "port": 30027
+  },
+  {
+    "containerName": "hydra-digital-marketing-kpis",
+    "port": 30028
+  },
+  {
+    "containerName": "hydra-content-repurposing-hacks",
+    "port": 30029
+  },
+  {
+    "containerName": "hydra-ai-writing-assistants",
+    "port": 30030
+  },
+  {
+    "containerName": "hydra-growth-hacking-techniques",
+    "port": 30031
+  },
+  {
+    "containerName": "hydra-python-automation-projects",
+    "port": 30032
+  },
+  {
+    "containerName": "hydra-effective-presentation-skills",
+    "port": 30033
+  },
+  {
+    "containerName": "hydra-remote-collaboration-tools",
+    "port": 30034
+  },
+  {
+    "containerName": "hydra-customer-retention-strategies",
+    "port": 30035
+  },
+  {
+    "containerName": "hydra-project-management-basics",
+    "port": 30036
+  },
+  {
+    "containerName": "hydra-agile-methodology-tips",
+    "port": 30037
+  },
+  {
+    "containerName": "hydra-video-marketing-trends",
+    "port": 30038
+  },
+  {
+    "containerName": "hydra-voice-search-optimization",
+    "port": 30039
+  },
+  {
+    "containerName": "hydra-influencer-marketing-tactics",
+    "port": 30040
+  },
+  {
+    "containerName": "hydra-business-intelligence-tools",
+    "port": 30041
+  },
+  {
+    "containerName": "hydra-chatbot-integration-tips",
+    "port": 30042
+  },
+  {
+    "containerName": "hydra-marketing-analytics-101",
+    "port": 30043
+  },
+  {
+    "containerName": "hydra-startup-legal-essentials",
+    "port": 30044
+  },
+  {
+    "containerName": "hydra-personal-branding-tips",
+    "port": 30045
+  },
+  {
+    "containerName": "hydra-ai-for-e-commerce",
+    "port": 30046
+  },
+  {
+    "containerName": "hydra-product-launch-checklist",
+    "port": 30047
+  },
+  {
+    "containerName": "hydra-crm-system-comparison",
+    "port": 30048
+  },
+  {
+    "containerName": "hydra-tech-trends-2025",
+    "port": 30049
+  },
+  {
+    "containerName": "hydra-email-list-growth-strategies",
+    "port": 30050
+  },
+  {
+    "containerName": "hydra-content-strategy-frameworks",
+    "port": 30051
+  },
+  {
+    "containerName": "hydra-affiliate-program-optimization",
+    "port": 30052
+  },
+  {
+    "containerName": "hydra-financial-modeling-for-startups",
+    "port": 30053
+  },
+  {
+    "containerName": "hydra-growth-metrics-you-must-track",
+    "port": 30054
+  },
+  {
+    "containerName": "hydra-conversion-rate-optimization-tips",
+    "port": 30055
+  },
+  {
+    "containerName": "hydra-user-onboarding-best-practices",
+    "port": 30056
+  },
+  {
+    "containerName": "hydra-marketing-automation-tools",
+    "port": 30057
+  },
+  {
+    "containerName": "hydra-seo-keyword-research-guide",
+    "port": 30058
+  },
+  {
+    "containerName": "hydra-python-data-visualization",
+    "port": 30059
+  },
+  {
+    "containerName": "hydra-web-analytics-basics",
+    "port": 30060
+  },
+  {
+    "containerName": "hydra-startup-pitch-deck-examples",
+    "port": 30061
+  },
+  {
+    "containerName": "hydra-remote-work-productivity-hacks",
+    "port": 30062
+  },
+  {
+    "containerName": "hydra-ai-content-generation-tips",
+    "port": 30063
+  },
+  {
+    "containerName": "hydra-e-commerce-platform-comparison",
+    "port": 30064
+  },
+  {
+    "containerName": "hydra-freelance-marketplace-strategies",
+    "port": 30065
+  },
+  {
+    "containerName": "hydra-productivity-mindset-techniques",
+    "port": 30066
+  },
+  {
+    "containerName": "hydra-lead-generation-strategies",
+    "port": 30067
+  },
+  {
+    "containerName": "hydra-ai-customer-support-bots",
+    "port": 30068
+  },
+  {
+    "containerName": "hydra-social-media-content-calendar",
+    "port": 30069
+  },
+  {
+    "containerName": "hydra-marketing-funnel-optimization",
+    "port": 30070
+  },
+  {
+    "containerName": "hydra-time-saving-automation-tips",
+    "port": 30071
+  },
+  {
+    "containerName": "hydra-python-scripting-for-automation",
+    "port": 30072
+  },
+  {
+    "containerName": "hydra-startup-growth-case-studies",
+    "port": 30073
+  },
+  {
+    "containerName": "hydra-brand-storytelling-tips",
+    "port": 30074
+  },
+  {
+    "containerName": "hydra-online-course-creation-strategies",
+    "port": 30075
+  },
+  {
+    "containerName": "hydra-influencer-outreach-templates",
+    "port": 30076
+  },
+  {
+    "containerName": "hydra-email-automation-workflows",
+    "port": 30077
+  },
+  {
+    "containerName": "hydra-digital-marketing-tools-comparison",
+    "port": 30078
+  },
+  {
+    "containerName": "hydra-ux-research-methods",
+    "port": 30079
+  },
+  {
+    "containerName": "hydra-website-speed-optimization",
+    "port": 30080
+  },
+  {
+    "containerName": "hydra-ai-productivity-tools-comparison",
+    "port": 30081
+  },
+  {
+    "containerName": "hydra-freelance-contract-essentials",
+    "port": 30082
+  },
+  {
+    "containerName": "hydra-marketing-campaign-analysis",
+    "port": 30083
+  },
+  {
+    "containerName": "hydra-personal-productivity-systems",
+    "port": 30084
+  },
+  {
+    "containerName": "hydra-ai-trends-in-marketing",
+    "port": 30085
+  },
+  {
+    "containerName": "hydra-project-management-tools-review",
+    "port": 30086
+  },
+  {
+    "containerName": "hydra-startup-customer-research",
+    "port": 30087
+  },
+  {
+    "containerName": "hydra-content-repurposing-templates",
+    "port": 30088
+  },
+  {
+    "containerName": "hydra-growth-hacking-case-studies",
+    "port": 30089
+  },
+  {
+    "containerName": "hydra-python-automation-scripts",
+    "port": 30090
+  },
+  {
+    "containerName": "hydra-effective-webinar-strategies",
+    "port": 30091
+  },
+  {
+    "containerName": "hydra-remote-team-building-activities",
+    "port": 30092
+  },
+  {
+    "containerName": "hydra-conversion-funnel-best-practices",
+    "port": 30093
+  },
+  {
+    "containerName": "hydra-affiliate-marketing-campaigns",
+    "port": 30094
+  },
+  {
+    "containerName": "hydra-email-newsletter-optimization",
+    "port": 30095
+  },
+  {
+    "containerName": "hydra-digital-product-launch-tips",
+    "port": 30096
+  },
+  {
+    "containerName": "hydra-ai-chatbot-best-practices",
+    "port": 30097
+  },
+  {
+    "containerName": "hydra-marketing-automation-examples",
+    "port": 30098
+  },
+  {
+    "containerName": "hydra-content-marketing-analytics",
+    "port": 30099
+  },
+  {
+    "containerName": "hydra-e-commerce-sales-optimization",
+    "port": 30100
+  },
+  {
+    "containerName": "hydra-startup-idea-validation",
+    "port": 30101
+  },
+  {
+    "containerName": "hydra-online-advertising-budgeting",
+    "port": 30102
+  }
+]

@@ -1,0 +1,15 @@
+host_port,container_name,subdomain,image
+4000,click-tracker-4000,click-tracker-4000.technicobasico.local,hydra-click-tracker:latest
+4001,nostalgic_poincare,nostalgic_poincare.technicobasico.local,4f782f5b682d
+4002,click-tracker-4002,click-tracker-4002.technicobasico.local,hydra-click-tracker:latest
+4003,click-tracker-4003,click-tracker-4003.technicobasico.local,hydra-click-tracker:latest
+4004,click-tracker-4004,click-tracker-4004.technicobasico.local,hydra-click-tracker:latest
+4105,click-tracker-4102,click-tracker-4102.technicobasico.local,hydra-click-tracker:latest
+4106,marketing-automation-workflows,marketing-automation-workflows.technicobasico.local,hydra-click-tracker:latest
+4203,csv,csv.technicobasico.local,hydra-click-tracker:latest
+33282,musing_noether,musing_noether.technicobasico.local,hydra-click-tracker:latest
+80,traefik,traefik.technicobasico.local,traefik:v2.10
+8000,uploader-contentgen-1,uploader-contentgen-1.technicobasico.local,uploader-contentgen
+8001,uploader-upload-1,uploader-upload-1.technicobasico.local,uploader-upload
+8080,uploader-website-1,uploader-website-1.technicobasico.local,uploader-website
+8081,traefik,traefik.technicobasico.local,traefik:v2.10

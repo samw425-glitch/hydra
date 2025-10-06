@@ -11,6 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "get-port": "^7.1.0"
+    "csv-parse": "^6.1.0",
+    "csv-parser": "^3.2.0",
+    "dockerode": "^4.0.9",
+    "get-port": "^5.1.1"
   }
 }
