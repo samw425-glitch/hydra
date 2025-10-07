@@ -1,0 +1,111 @@
+python main.py"   2 days ago   Up 2 hours   0.0.0.0:8080->8000/tcp, [::]:8080->8000/tcp   uploader-website-1
+44a61fb6dad8   uploader-utm           "python main.py"   2 days ago   Up 2 hours                                                 uploader-utm-1
+8e68148e7988   uploader-analytics     "python main.py"   2 days ago   Up 2 hours                                                 uploader-analytics-1
+9360942df6d8   uploader-backlinking   "python main.py"   2 days ago   Up 2 hours                                                 uploader-backlinking-1
+samunbunto@samhome:~/hydra$ nano dockerfile-redirect
+samunbunto@samhome:~/hydra$ docker build -t hydra-redirect:latest -f dockerfile-redirect .
+[+] Building 0.1s (1/1) FINISHED                                                                                     docker:default
+ => [internal] load build definition from dockerfile-redirect                                                                  0.0s
+ => => transferring dockerfile: 188B                                                                                           0.0s
+dockerfile-redirect:1
+--------------------
+   1 | >>> COPY redirect-service.js package*.json ./
+   2 |     RUN npm install express cookie-parser morgan uuid
+   3 |     EXPOSE 4005
+--------------------
+ERROR: failed to build: failed to solve: no build stage in current context
+samunbunto@samhome:~/hydra$ docker run -d -p 4005:4005 --name hydra-redirect hydra-redirect:latest
+docker logs -f hydra-redirect
+398e70a2e098057a1dc11245b5adc8ad7e29a4c079ae373f3040de8ed068480a
+samunbunto@samhome:~/hydra$ curl http://localhost:4005/r/1
+curl: (7) Failed to connect to localhost port 4005 after 0 ms: Connection refused
+samunbunto@samhome:~/hydra$ nano dockerfile-redirect
+samunbunto@samhome:~/hydra$ docker build -t hydra-redirect:latest -f dockerfile-redirect .
+[+] Building 46.5s (11/11) FINISHED                                                                                  docker:default
+ => [internal] load build definition from dockerfile-redirect                                                                  0.0s
+ => => transferring dockerfile: 394B                                                                                           0.0s
+ => [internal] load metadata for docker.io/library/node:22                                                                     1.5s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                    0.0s
+ => [internal] load .dockerignore                                                                                              0.0s
+ => => transferring context: 2B                                                                                                0.0s
+ => [1/5] FROM docker.io/library/node:22@sha256:2bb201f33898d2c0ce638505b426f4dd038cc00e5b2b4cbba17b069f0fff1496              31.0s
+ => => resolve docker.io/library/node:22@sha256:2bb201f33898d2c0ce638505b426f4dd038cc00e5b2b4cbba17b069f0fff1496               0.0s
+ => => sha256:dc063a0d13f43a8455c198dbc3df23f3c18eb7d15e52c7701942002eb85784da 6.63kB / 6.63kB                                 0.0s
+ => => sha256:db3dba6026a3c551d6b8e98308c073fff4fd569fd2fc61f21384cb996da82c9e 24.03MB / 24.03MB                               2.7s
+ => => sha256:2bb201f33898d2c0ce638505b426f4dd038cc00e5b2b4cbba17b069f0fff1496 6.41kB / 6.41kB                                 0.0s
+ => => sha256:a510685941c51f03994e23e2ceb64ba6b56c8085e0edfa2a5ab5c8b706fa43ee 2.49kB / 2.49kB                                 0.0s
+ => => sha256:c6b11972fd12973831818babf60f1ffc1c4047507943d132dffc612884022858 48.48MB / 48.48MB                               4.8s
+ => => sha256:5fb1b35a6fc14463ada297f3f0605409cbfe29368b38fd5d1e41f7dcf29bb6fb 64.40MB / 64.40MB                               5.6s
+ => => sha256:d6ecbfb3e7f8ccd5b04dc161a13218fd7aade8b0235603a879606a4e6887da6a 211.45MB / 211.45MB                            18.3s
+ => => sha256:209824f1020dd7356de5ba29da8ebdb51b2aba6156e65e988a4f1afaa5e0bc90 3.32kB / 3.32kB                                 5.4s
+ => => extracting sha256:c6b11972fd12973831818babf60f1ffc1c4047507943d132dffc612884022858                                      3.5s
+ => => sha256:44589308cc55302277ca7c9ad227c640d9d505656330ad4b2d0e2259f32ac81c 58.24MB / 58.24MB                              11.2s
+ => => sha256:62b1e7c1b2998f158b161ff1608a362205abc2a88f934a81f1c27fc482781723 1.25MB / 1.25MB                                 6.2s
+ => => sha256:2ef9d29408a87ac654c5a6ce36600717d04616f5188eaffe5dc6809803d885a7 445B / 445B                                     6.5s
+ => => extracting sha256:db3dba6026a3c551d6b8e98308c073fff4fd569fd2fc61f21384cb996da82c9e                                      0.9s
+ => => extracting sha256:5fb1b35a6fc14463ada297f3f0605409cbfe29368b38fd5d1e41f7dcf29bb6fb                                      4.7s
+ => => extracting sha256:d6ecbfb3e7f8ccd5b04dc161a13218fd7aade8b0235603a879606a4e6887da6a                                      9.8s
+ => => extracting sha256:209824f1020dd7356de5ba29da8ebdb51b2aba6156e65e988a4f1afaa5e0bc90                                      0.0s
+ => => extracting sha256:44589308cc55302277ca7c9ad227c640d9d505656330ad4b2d0e2259f32ac81c                                      2.3s
+ => => extracting sha256:62b1e7c1b2998f158b161ff1608a362205abc2a88f934a81f1c27fc482781723                                      0.1s
+ => => extracting sha256:2ef9d29408a87ac654c5a6ce36600717d04616f5188eaffe5dc6809803d885a7                                      0.0s
+ => [internal] load build context                                                                                              0.4s
+ => => transferring context: 111B                                                                                              0.4s
+ => [2/5] WORKDIR /app                                                                                                         0.9s
+ => [3/5] COPY package*.json ./                                                                                                0.1s
+ => [4/5] RUN npm install express cookie-parser morgan uuid                                                                   11.6s
+ => [5/5] COPY redirect-service.js ./                                                                                          0.1s
+ => exporting to image                                                                                                         1.2s
+ => => exporting layers                                                                                                        1.2s
+ => => writing image sha256:7c2de54b2ad88b91c35c91b8b0df60460f7a08942877f4bc201dd6645dede7df                                   0.0s
+ => => naming to docker.io/library/hydra-redirect:latest                                                                       0.0s
+samunbunto@samhome:~/hydra$ docker run -d -p 4005:4005 --name hydra-redirect hydra-redirect:latest
+docker logs -f hydra-redirect
+docker: Error response from daemon: Conflict. The container name "/hydra-redirect" is already in use by container "398e70a2e098057a1dc11245b5adc8ad7e29a4c079ae373f3040de8ed068480a". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+samunbunto@samhome:~/hydra$ docker run -d -p 4005:4005 --name hydra-redirect hydra-redirect:latest
+docker logs -f hydra-redirect
+docker: Error response from daemon: Conflict. The container name "/hydra-redirect" is already in use by container "398e70a2e098057a1dc11245b5adc8ad7e29a4c079ae373f3040de8ed068480a". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+samunbunto@samhome:~/hydra$ docker ps -a | grep hydra-redirect
+398e70a2e098   16e907a7ab29                 "docker-entrypoint.s…"   3 minutes ago   Exited (0) 3 minutes ago                                                                                      hydra-redirect
+samunbunto@samhome:~/hydra$ docker rm -f hydra-redirect
+hydra-redirect
+samunbunto@samhome:~/hydra$ docker run -d -p 4005:4005 --name hydra-redirect hydra-redirect:latest
+937105f1070e939226983703a82ff2099d66e1a5d567494c444ba8c9eb22c2cc
+samunbunto@samhome:~/hydra$ docker logs -f hydra-redirect
+samunbunto@samhome:~/hydra$ nano redirect-service.js
+samunbunto@samhome:~/hydra$ docker build -t hydra-redirect:latest -f dockerfile-redirect .
+docker run -d -p 4005:4005 --name hydra-redirect hydra-redirect:latest
+docker logs -f hydra-redirect
+[+] Building 1.1s (11/11) FINISHED                                                                                   docker:default
+ => [internal] load build definition from dockerfile-redirect                                                                  0.0s
+ => => transferring dockerfile: 394B                                                                                           0.0s
+ => [internal] load metadata for docker.io/library/node:22                                                                     0.7s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                    0.0s
+ => [internal] load .dockerignore                                                                                              0.0s
+ => => transferring context: 2B                                                                                                0.0s
+ => [1/5] FROM docker.io/library/node:22@sha256:2bb201f33898d2c0ce638505b426f4dd038cc00e5b2b4cbba17b069f0fff1496               0.0s
+ => [internal] load build context                                                                                              0.1s
+ => => transferring context: 1.03kB                                                                                            0.1s
+ => CACHED [2/5] WORKDIR /app                                                                                                  0.0s
+ => CACHED [3/5] COPY package*.json ./                                                                                         0.0s
+ => CACHED [4/5] RUN npm install express cookie-parser morgan uuid                                                             0.0s
+ => [5/5] COPY redirect-service.js ./                                                                                          0.0s
+ => exporting to image                                                                                                         0.1s
+ => => exporting layers                                                                                                        0.0s
+ => => writing image sha256:adc4ce9c7c0f74d9ef09dfd5afbc81cb43b034775f61d993b93b6fb29510443c                                   0.0s
+ => => naming to docker.io/library/hydra-redirect:latest                                                                       0.0s
+docker: Error response from daemon: Conflict. The container name "/hydra-redirect" is already in use by container "937105f1070e939226983703a82ff2099d66e1a5d567494c444ba8c9eb22c2cc". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+samunbunto@samhome:~/hydra$ docker ps -a | grep hydra-redirect
+937105f1070e   7c2de54b2ad8                 "docker-entrypoint.s…"   3 minutes ago   Exited (0) 3 minutes ago                                                                                      hydra-redirect
+samunbunto@samhome:~/hydra$ docker rm -f hydra-redirect
+hydra-redirect\
+
+
+samunbunto@samhome:~/hydra$ docker build -t hydra-redirect:latest -f dockerfile-redirect .
+docker run -d -p 4005:4005 --name hydra-redirect hydra-redirect:latest

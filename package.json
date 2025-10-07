@@ -11,9 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.7",
     "csv-parse": "^6.1.0",
     "csv-parser": "^3.2.0",
     "dockerode": "^4.0.9",
-    "get-port": "^5.1.1"
+    "express": "^5.1.0",
+    "get-port": "^5.1.1",
+    "morgan": "^1.10.1",
+    "uuid": "^13.0.0"
   }
 }

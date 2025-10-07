@@ -1,0 +1,17 @@
+# Use Node 22 Alpine for lean image
+FROM node:22-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy service files
+COPY redirect-service.js package*.json ./
+
+# Install dependencies
+RUN npm install express cookie-parser morgan uuid
+
+# Expose port
+EXPOSE 4005
+
+# Start service
+CMD ["node", "redirect-service.js"]

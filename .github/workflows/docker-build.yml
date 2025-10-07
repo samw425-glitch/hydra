@@ -1,0 +1,4 @@
+- name: Build & Push Redirect Service
+  run: |
+    docker build -t ${{ secrets.DOCKERHUB_USER }}/hydra-redirect:latest -f Dockerfile.redirect .
+    docker push ${{ secrets.DOCKERHUB_USER }}/hydra-redirect:latest
