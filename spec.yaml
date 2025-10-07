@@ -1,0 +1,15 @@
+name: hydra3-app               # <- this is required
+region: nyc3                   # optional but recommended
+services:
+  - name: redirect-service
+    image:
+      registry: registry.digitalocean.com/hydra3
+      repository: api-catalog
+      tag: latest
+      registry_type: DOCR
+    run_command: "node redirect-service.js"
+    instance_size_slug: basic-xxs
+    instance_count: 1
+    http_port: 4005
+    routes:
+      - path: /

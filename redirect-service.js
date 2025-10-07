@@ -1,88 +1,180 @@
-import express from 'express';
-import cookieParser from 'cookie-parser';
-import morgan from 'morgan';
-import { v4 as uuidv4 } from 'uuid';
+// redirect-service.js
+import express from "express";
+import fs from "fs";
+import path from "path";
+import cookieParser from "cookie-parser";
+import morgan from "morgan";
+import { fileURLToPath } from "url";
+import { v4 as uuidv4 } from "uuid";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
-const PORT = 4005;
+const PORT = process.env.PORT || 4005;
 
-app.use(morgan('dev'));
 app.use(cookieParser());
+app.use(express.static("public"));
+app.use(morgan("dev"));
 
-// --- 40 ID → Affiliate URL mappings ---
-const redirects = [
-  { id: '1', url: 'https://affiliate1.com?utm_source=hydra' },
-  { id: '2', url: 'https://affiliate2.com?utm_source=hydra' },
-  { id: '3', url: 'https://affiliate3.com?utm_source=hydra' },
-  { id: '4', url: 'https://affiliate4.com?utm_source=hydra' },
-  { id: '5', url: 'https://affiliate5.com?utm_source=hydra' },
-  { id: '6', url: 'https://affiliate6.com?utm_source=hydra' },
-  { id: '7', url: 'https://affiliate7.com?utm_source=hydra' },
-  { id: '8', url: 'https://affiliate8.com?utm_source=hydra' },
-  { id: '9', url: 'https://affiliate9.com?utm_source=hydra' },
-  { id: '10', url: 'https://affiliate10.com?utm_source=hydra' },
-  { id: '11', url: 'https://affiliate11.com?utm_source=hydra' },
-  { id: '12', url: 'https://affiliate12.com?utm_source=hydra' },
-  { id: '13', url: 'https://affiliate13.com?utm_source=hydra' },
-  { id: '14', url: 'https://affiliate14.com?utm_source=hydra' },
-  { id: '15', url: 'https://affiliate15.com?utm_source=hydra' },
-  { id: '16', url: 'https://affiliate16.com?utm_source=hydra' },
-  { id: '17', url: 'https://affiliate17.com?utm_source=hydra' },
-  { id: '18', url: 'https://affiliate18.com?utm_source=hydra' },
-  { id: '19', url: 'https://affiliate19.com?utm_source=hydra' },
-  { id: '20', url: 'https://affiliate20.com?utm_source=hydra' },
-  { id: '21', url: 'https://affiliate21.com?utm_source=hydra' },
-  { id: '22', url: 'https://affiliate22.com?utm_source=hydra' },
-  { id: '23', url: 'https://affiliate23.com?utm_source=hydra' },
-  { id: '24', url: 'https://affiliate24.com?utm_source=hydra' },
-  { id: '25', url: 'https://affiliate25.com?utm_source=hydra' },
-  { id: '26', url: 'https://affiliate26.com?utm_source=hydra' },
-  { id: '27', url: 'https://affiliate27.com?utm_source=hydra' },
-  { id: '28', url: 'https://affiliate28.com?utm_source=hydra' },
-  { id: '29', url: 'https://affiliate29.com?utm_source=hydra' },
-  { id: '30', url: 'https://affiliate30.com?utm_source=hydra' },
-  { id: '31', url: 'https://affiliate31.com?utm_source=hydra' },
-  { id: '32', url: 'https://affiliate32.com?utm_source=hydra' },
-  { id: '33', url: 'https://affiliate33.com?utm_source=hydra' },
-  { id: '34', url: 'https://affiliate34.com?utm_source=hydra' },
-  { id: '35', url: 'https://affiliate35.com?utm_source=hydra' },
-  { id: '36', url: 'https://affiliate36.com?utm_source=hydra' },
-  { id: '37', url: 'https://affiliate37.com?utm_source=hydra' },
-  { id: '38', url: 'https://affiliate38.com?utm_source=hydra' },
-  { id: '39', url: 'https://affiliate39.com?utm_source=hydra' },
-  { id: '40', url: 'https://affiliate40.com?utm_source=hydra' },
-];
+const DATA_DIR = path.join(__dirname, "data");
+if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
-// --- Helper for click tracking ---
-function trackClick(req, res, redirectId) {
-  const ip = req.ip;
-  const userAgent = req.headers['user-agent'] || '';
-  const cookies = req.cookies;
-  const utm_source = req.query.utm_source || 'none';
-  const clickId = uuidv4();
-
-  console.log(`CLICK TRACKED: ${clickId}`, {
-    redirectId,
-    ip,
-    userAgent,
-    cookies,
-    utm_source,
-  });
-
-  res.cookie('hydra_click', clickId, { maxAge: 24*60*60*1000, httpOnly: true });
+// --- Load or bootstrap affiliate links ---
+const LINKS_FILE = path.join(DATA_DIR, "affiliate-links.json");
+let linkMap = {};
+if (fs.existsSync(LINKS_FILE)) {
+  linkMap = JSON.parse(fs.readFileSync(LINKS_FILE, "utf-8"));
+} else {
+  linkMap = Object.fromEntries(
+    Array.from({ length: 40 }).map((_, i) => [
+      `r${i + 1}`,
+      {
+        url: `https://affiliate${i + 1}.example.com?utm_source=hydra`,
+        name: `Affiliate ${i + 1}`,
+        topic: ["hosting", "marketing", "automation", "contentgen", "tools"][i % 5],
+      },
+    ])
+  );
+  fs.writeFileSync(LINKS_FILE, JSON.stringify(linkMap, null, 2));
 }
 
-// --- Redirect endpoint ---
-app.get('/r/:id', (req, res) => {
-  const id = req.params.id;
-  const entry = redirects.find(r => r.id === id);
+// --- Route: redirect tracker ---
+app.get("/r/:id", (req, res) => {
+  const { id } = req.params;
+  const record = linkMap[id];
+  if (!record) return res.status(404).send("Not found");
 
-  if (!entry) {
-    return res.status(404).send('Redirect ID not found');
+  const logEntry = {
+    id,
+    ts: new Date().toISOString(),
+    ip: req.ip,
+    ua: req.headers["user-agent"],
+    referer: req.headers["referer"] || "",
+    cookies: req.cookies || {},
+    utm_source: req.query.utm_source || "",
+  };
+
+  fs.appendFileSync(path.join(DATA_DIR, "clicks.log"), JSON.stringify(logEntry) + "\n");
+
+  if (!req.cookies.hydra_user) {
+    res.cookie("hydra_user", uuidv4(), { maxAge: 86400000 * 365 });
   }
 
-  trackClick(req, res, id);
-  res.redirect(entry.url);
+  res.redirect(302, record.url);
 });
 
-app.listen(PORT, () => console.log(`Redirect service running on port ${PORT}`));
+// --- Route: affiliate list dashboard ---
+app.get("/", (req, res) => {
+  const rows = Object.entries(linkMap)
+    .map(
+      ([id, l]) => `
+      <tr>
+        <td>${id}</td>
+        <td>${l.name}</td>
+        <td>${l.topic}</td>
+        <td><a href="/r/${id}" target="_blank">Visit</a></td>
+        <td>${l.url}</td>
+      </tr>`
+    )
+    .join("");
+
+  const html = `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Hydra Redirect Dashboard</title>
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 2rem; background: #f7f9fb; }
+      h1 { text-align: center; margin-bottom: 0; }
+      .nav { text-align: center; margin-bottom: 1rem; }
+      a.nav-link { color: #007bff; text-decoration: none; margin: 0 0.5rem; }
+      a.nav-link:hover { text-decoration: underline; }
+      table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+      th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+      th { background: #333; color: #fff; }
+      tr:nth-child(even) { background: #f9f9f9; }
+      a { color: #007bff; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <h1>Hydra Redirect Dashboard</h1>
+    <div class="nav">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/logs" class="nav-link">📊 View Logs</a>
+    </div>
+    <table>
+      <thead><tr><th>ID</th><th>Name</th><th>Topic</th><th>Visit</th><th>Affiliate URL</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </body>
+  </html>
+  `;
+  res.send(html);
+});
+
+// --- Route: click logs dashboard ---
+app.get("/logs", (req, res) => {
+  const logFile = path.join(DATA_DIR, "clicks.log");
+  if (!fs.existsSync(logFile)) return res.send("<h3>No clicks yet!</h3>");
+
+  const lines = fs
+    .readFileSync(logFile, "utf-8")
+    .split("\n")
+    .filter(Boolean)
+    .slice(-500) // show last 500
+    .map((l) => JSON.parse(l));
+
+  const rows = lines
+    .map(
+      (l) => `
+      <tr>
+        <td>${l.ts}</td>
+        <td>${l.id}</td>
+        <td>${l.ip}</td>
+        <td>${l.utm_source}</td>
+        <td>${l.referer || "-"}</td>
+        <td>${l.ua.slice(0, 80)}</td>
+      </tr>`
+    )
+    .join("");
+
+  const html = `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Hydra Analytics Logs</title>
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 2rem; background: #f0f2f5; }
+      h1 { text-align: center; }
+      .nav { text-align: center; margin-bottom: 1rem; }
+      a.nav-link { color: #007bff; text-decoration: none; margin: 0 0.5rem; }
+      a.nav-link:hover { text-decoration: underline; }
+      table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+      th, td { border: 1px solid #ccc; padding: 6px; }
+      th { background: #444; color: #fff; }
+      tr:nth-child(even) { background: #fafafa; }
+      td { word-break: break-word; }
+    </style>
+  </head>
+  <body>
+    <h1>📊 Hydra Click Analytics</h1>
+    <div class="nav">
+      <a href="/" class="nav-link">🏠 Home</a>
+      <a href="/logs" class="nav-link">🔄 Refresh Logs</a>
+    </div>
+    <table>
+      <thead><tr><th>Time</th><th>ID</th><th>IP</th><th>UTM Source</th><th>Referer</th><th>User Agent</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </body>
+  </html>
+  `;
+  res.send(html);
+});
+
+// --- Start server ---
+app.listen(PORT, () => {
+  console.log(`🚀 Hydra Redirect + Analytics running at http://localhost:${PORT}`);
+});
