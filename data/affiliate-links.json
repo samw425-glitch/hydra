@@ -1,0 +1,202 @@
+{
+  "r1": {
+    "url": "https://affiliate1.example.com?utm_source=hydra",
+    "name": "Affiliate 1",
+    "topic": "hosting"
+  },
+  "r2": {
+    "url": "https://affiliate2.example.com?utm_source=hydra",
+    "name": "Affiliate 2",
+    "topic": "marketing"
+  },
+  "r3": {
+    "url": "https://affiliate3.example.com?utm_source=hydra",
+    "name": "Affiliate 3",
+    "topic": "automation"
+  },
+  "r4": {
+    "url": "https://affiliate4.example.com?utm_source=hydra",
+    "name": "Affiliate 4",
+    "topic": "contentgen"
+  },
+  "r5": {
+    "url": "https://affiliate5.example.com?utm_source=hydra",
+    "name": "Affiliate 5",
+    "topic": "tools"
+  },
+  "r6": {
+    "url": "https://affiliate6.example.com?utm_source=hydra",
+    "name": "Affiliate 6",
+    "topic": "hosting"
+  },
+  "r7": {
+    "url": "https://affiliate7.example.com?utm_source=hydra",
+    "name": "Affiliate 7",
+    "topic": "marketing"
+  },
+  "r8": {
+    "url": "https://affiliate8.example.com?utm_source=hydra",
+    "name": "Affiliate 8",
+    "topic": "automation"
+  },
+  "r9": {
+    "url": "https://affiliate9.example.com?utm_source=hydra",
+    "name": "Affiliate 9",
+    "topic": "contentgen"
+  },
+  "r10": {
+    "url": "https://affiliate10.example.com?utm_source=hydra",
+    "name": "Affiliate 10",
+    "topic": "tools"
+  },
+  "r11": {
+    "url": "https://affiliate11.example.com?utm_source=hydra",
+    "name": "Affiliate 11",
+    "topic": "hosting"
+  },
+  "r12": {
+    "url": "https://affiliate12.example.com?utm_source=hydra",
+    "name": "Affiliate 12",
+    "topic": "marketing"
+  },
+  "r13": {
+    "url": "https://affiliate13.example.com?utm_source=hydra",
+    "name": "Affiliate 13",
+    "topic": "automation"
+  },
+  "r14": {
+    "url": "https://affiliate14.example.com?utm_source=hydra",
+    "name": "Affiliate 14",
+    "topic": "contentgen"
+  },
+  "r15": {
+    "url": "https://affiliate15.example.com?utm_source=hydra",
+    "name": "Affiliate 15",
+    "topic": "tools"
+  },
+  "r16": {
+    "url": "https://affiliate16.example.com?utm_source=hydra",
+    "name": "Affiliate 16",
+    "topic": "hosting"
+  },
+  "r17": {
+    "url": "https://affiliate17.example.com?utm_source=hydra",
+    "name": "Affiliate 17",
+    "topic": "marketing"
+  },
+  "r18": {
+    "url": "https://affiliate18.example.com?utm_source=hydra",
+    "name": "Affiliate 18",
+    "topic": "automation"
+  },
+  "r19": {
+    "url": "https://affiliate19.example.com?utm_source=hydra",
+    "name": "Affiliate 19",
+    "topic": "contentgen"
+  },
+  "r20": {
+    "url": "https://affiliate20.example.com?utm_source=hydra",
+    "name": "Affiliate 20",
+    "topic": "tools"
+  },
+  "r21": {
+    "url": "https://affiliate21.example.com?utm_source=hydra",
+    "name": "Affiliate 21",
+    "topic": "hosting"
+  },
+  "r22": {
+    "url": "https://affiliate22.example.com?utm_source=hydra",
+    "name": "Affiliate 22",
+    "topic": "marketing"
+  },
+  "r23": {
+    "url": "https://affiliate23.example.com?utm_source=hydra",
+    "name": "Affiliate 23",
+    "topic": "automation"
+  },
+  "r24": {
+    "url": "https://affiliate24.example.com?utm_source=hydra",
+    "name": "Affiliate 24",
+    "topic": "contentgen"
+  },
+  "r25": {
+    "url": "https://affiliate25.example.com?utm_source=hydra",
+    "name": "Affiliate 25",
+    "topic": "tools"
+  },
+  "r26": {
+    "url": "https://affiliate26.example.com?utm_source=hydra",
+    "name": "Affiliate 26",
+    "topic": "hosting"
+  },
+  "r27": {
+    "url": "https://affiliate27.example.com?utm_source=hydra",
+    "name": "Affiliate 27",
+    "topic": "marketing"
+  },
+  "r28": {
+    "url": "https://affiliate28.example.com?utm_source=hydra",
+    "name": "Affiliate 28",
+    "topic": "automation"
+  },
+  "r29": {
+    "url": "https://affiliate29.example.com?utm_source=hydra",
+    "name": "Affiliate 29",
+    "topic": "contentgen"
+  },
+  "r30": {
+    "url": "https://affiliate30.example.com?utm_source=hydra",
+    "name": "Affiliate 30",
+    "topic": "tools"
+  },
+  "r31": {
+    "url": "https://affiliate31.example.com?utm_source=hydra",
+    "name": "Affiliate 31",
+    "topic": "hosting"
+  },
+  "r32": {
+    "url": "https://affiliate32.example.com?utm_source=hydra",
+    "name": "Affiliate 32",
+    "topic": "marketing"
+  },
+  "r33": {
+    "url": "https://affiliate33.example.com?utm_source=hydra",
+    "name": "Affiliate 33",
+    "topic": "automation"
+  },
+  "r34": {
+    "url": "https://affiliate34.example.com?utm_source=hydra",
+    "name": "Affiliate 34",
+    "topic": "contentgen"
+  },
+  "r35": {
+    "url": "https://affiliate35.example.com?utm_source=hydra",
+    "name": "Affiliate 35",
+    "topic": "tools"
+  },
+  "r36": {
+    "url": "https://affiliate36.example.com?utm_source=hydra",
+    "name": "Affiliate 36",
+    "topic": "hosting"
+  },
+  "r37": {
+    "url": "https://affiliate37.example.com?utm_source=hydra",
+    "name": "Affiliate 37",
+    "topic": "marketing"
+  },
+  "r38": {
+    "url": "https://affiliate38.example.com?utm_source=hydra",
+    "name": "Affiliate 38",
+    "topic": "automation"
+  },
+  "r39": {
+    "url": "https://affiliate39.example.com?utm_source=hydra",
+    "name": "Affiliate 39",
+    "topic": "contentgen"
+  },
+  "r40": {
+    "url": "https://affiliate40.example.com?utm_source=hydra",
+    "name": "Affiliate 40",
+    "topic": "tools"
+  }
+}
