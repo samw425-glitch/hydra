@@ -1,21 +1,31 @@
 #!/bin/bash
 
+# Check which docker compose command to use
+if command -v docker-compose > /dev/null 2>&1; then
+    DOCKER_COMPOSE_CMD="docker-compose"
+elif docker compose version > /dev/null 2>&1; then
+    DOCKER_COMPOSE_CMD="docker compose"
+else
+    echo "❌ Error: Docker Compose not found"
+    exit 1
+fi
+
 case "$1" in
   "start")
     echo "🚀 Starting Complete Hydra Ecosystem (9 services)..."
-    docker-compose -f ~/hydra/docker-compose.complete.yml up -d
+    $DOCKER_COMPOSE_CMD -f ~/hydra/docker-compose.complete.yml up -d
     ;;
   "stop")
     echo "🛑 Stopping Complete Hydra Ecosystem..."
-    docker-compose -f ~/hydra/docker-compose.complete.yml down
+    $DOCKER_COMPOSE_CMD -f ~/hydra/docker-compose.complete.yml down
     ;;
   "status")
     echo "📊 Complete Hydra Ecosystem Status:"
-    docker-compose -f ~/hydra/docker-compose.complete.yml ps
+    $DOCKER_COMPOSE_CMD -f ~/hydra/docker-compose.complete.yml ps
     ;;
   "logs")
     echo "📋 Showing logs..."
-    docker-compose -f ~/hydra/docker-compose.complete.yml logs -f
+    $DOCKER_COMPOSE_CMD -f ~/hydra/docker-compose.complete.yml logs -f
     ;;
   "test")
     echo "🧪 Testing all 9 services..."
