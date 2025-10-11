@@ -2,6 +2,7 @@ name: hydra-simple
 services:
 - name: web
   image:
+    registry_type: DOCKER_HUB
     registry: docker.io
     repository: samw425glitch/hydra-cloud-orchestrator
     tag: latest

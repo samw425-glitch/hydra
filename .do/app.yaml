@@ -1,11 +1,10 @@
 name: hydra-app
 services:
 - name: web
-  image:
-    registry_type: DOCKER_HUB
-    registry: docker.io
-    repository: samw425glitch/hydra-cloud-orchestrator
-    tag: latest
+  source_dir: /
+  dockerfile_path: Dockerfile
+  run_command: npm start
+  instance_size_slug: basic-xxs
   instance_count: 1
   http_port: 8080
   routes:

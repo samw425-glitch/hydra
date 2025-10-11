@@ -94,9 +94,25 @@ app.get('/api/status', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`🐉 Hydra Enhanced Orchestrator running on port ${PORT}`);
-  console.log('📦 Available services:', Object.keys(prebuiltImages));
-  console.log('🚀 Uploader services integrated!');
+const http = require("http");
+const port = process.env.PORT || 8080;
+
+// Minimal HTTP server (can be extended later)
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Hydra Orchestrator is running\n");
+});
+
+// Handle port-in-use gracefully
+server.on("error", err => {
+  if (err.code === "EADDRINUSE") {
+    console.error(`⚠️  Port ${port} is already in use. Try: ./scripts/killport.sh ${port}`);
+    process.exit(1);
+  } else {
+    console.error("Server error:", err);
+  }
+});
+
+server.listen(port, () => {
+  console.log(`🐉 Hydra Enhanced Orchestrator running on port ${port}`);
 });
