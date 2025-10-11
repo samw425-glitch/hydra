@@ -1,0 +1,55 @@
+name: hydra-ecosystem
+services:
+- name: website
+  github:
+    repo: yourusername/hydra
+    branch: main
+    deploy_on_push: true
+  source_dir: /api-catalog/website
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  http_port: 3000
+  run_command: npm start
+  build_command: npm install
+
+- name: api
+  github:
+    repo: yourusername/hydra
+    branch: main
+    deploy_on_push: true
+  source_dir: /api-catalog/api
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  http_port: 4000
+  run_command: npm start
+  build_command: npm install
+
+- name: utm
+  github:
+    repo: yourusername/hydra
+    branch: main
+    deploy_on_push: true
+  source_dir: /api-catalog/utm
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  http_port: 9000
+  run_command: npm start
+  build_command: npm install
+
+- name: orchestrator
+  github:
+    repo: yourusername/hydra
+    branch: main
+    deploy_on_push: true
+  source_dir: /api-catalog/orchestrator
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  http_port: 8080
+  run_command: npm start
+  build_command: npm install
+
+# Add more services as needed...
