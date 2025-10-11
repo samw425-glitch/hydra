@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Item Styler - Hydra</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .controls {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .control-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .control-item {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #495057;
+        }
+        input, select, button {
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover { background: #0056b3; }
+        .table-container {
+            overflow-x: auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+        }
+        tr:hover { background: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐉 Hydra Line Item Styler</h1>
+            <p>Style your data tables with real-time preview</p>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <div class="control-item">
+                    <label for="bgColor">Background Color</label>
+                    <input type="color" id="bgColor" value="#ffffff">
+                </div>
+                <div class="control-item">
+                    <label for="textColor">Text Color</label>
+                    <input type="color" id="textColor" value="#000000">
+                </div>
+                <div class="control-item">
+                    <label for="headerBg">Header Background</label>
+                    <input type="color" id="headerBg" value="#f8f9fa">
+                </div>
+            </div>
+            
+            <button onclick="applyStyles()">Apply Styles</button>
+            <button onclick="resetStyles()" style="background: #6c757d;">Reset</button>
+        </div>
+
+        <div class="table-container">
+            <h3>Live Preview</h3>
+            <table id="previewTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>Port</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Orchestrator API</td>
+                        <td>🟢 Running</td>
+                        <td>8080</td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Click Tracker</td>
+                        <td>🟢 Running</td>
+                        <td>4000</td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Line Item Styler</td>
+                        <td>🟡 Deploying</td>
+                        <td>8083</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function applyStyles() {
+            const table = document.getElementById('previewTable');
+            const bgColor = document.getElementById('bgColor').value;
+            const textColor = document.getElementById('textColor').value;
+            const headerBg = document.getElementById('headerBg').value;
+
+            table.style.backgroundColor = bgColor;
+            table.style.color = textColor;
+            
+            const headers = table.querySelectorAll('th');
+            headers.forEach(header => {
+                header.style.backgroundColor = headerBg;
+            });
+        }
+
+        function resetStyles() {
+            document.getElementById('bgColor').value = '#ffffff';
+            document.getElementById('textColor').value = '#000000';
+            document.getElementById('headerBg').value = '#f8f9fa';
+            applyStyles();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', applyStyles);
+    </script>
+</body>
+</html>

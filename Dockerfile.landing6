@@ -1,0 +1,6 @@
+FROM node:20-alpine
+WORKDIR /app
+RUN npm install -g serve
+COPY templates/landing/path6/ /app/public/
+EXPOSE 8205
+CMD ["serve", "-s", "public", "-l", "8205"]

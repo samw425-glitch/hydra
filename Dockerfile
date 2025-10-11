@@ -1,30 +1,18 @@
-# Base image
-FROM node:18-alpine
+# Dockerfile.landing
+FROM node:20-alpine
 
-# Working directory
 WORKDIR /app
 
-# Install Docker CLI and bash
-RUN apk add --no-cache \
-    bash \
-    docker-cli \
-    git \
-    curl \
-    libc6-compat
+# Copy landing template and public HTML
+COPY ./template/ ./template/
+COPY ../public/html/ ./public/html/
 
-# Copy package.json and install dependencies
-COPY api-catalog/package*.json ./
-RUN npm ci --production
+# Install optional dependencies (e.g., markdown-it)
+RUN npm install markdown-it
 
-# Copy orchestrator script
-COPY api-catalog/orchestrator.js ./orchestrator.js
+# Serve static content
+RUN npm install -g serve
 
-# Copy templates and topics.csv
-COPY templates /templates
-COPY api-catalog/topics.csv ./topics.csv
+EXPOSE 8080
+CMD ["serve", "-s", "public/html", "-l", "8080"]
 
-# Expose API port
-EXPOSE 3000
-
-# Run orchestrator
-CMD ["node", "orchestrator.js"]

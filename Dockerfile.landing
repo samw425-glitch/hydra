@@ -1,11 +1,16 @@
-# 🐳 Hydra Landing Service
-FROM node:18-alpine
+FROM node:20-alpine
 
-WORKDIR /app/landing
-COPY ./landing ./landing
-WORKDIR /app/landing
+WORKDIR /app
 
-RUN npm init -y && npm install express
+# Install serve globally
+RUN npm install -g serve
 
-EXPOSE 4001
-CMD ["node", "index.js"]
+# Create directory structure
+RUN mkdir -p public/html
+
+# Copy the landing page template
+COPY templates/landing/index.html public/html/
+COPY templates/landing/style.css public/html/
+
+EXPOSE 8080
+CMD ["serve", "-s", "public/html", "-l", "8080"]

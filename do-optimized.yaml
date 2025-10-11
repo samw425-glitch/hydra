@@ -1,0 +1,30 @@
+name: hydra-production
+services:
+  - name: orchestrator
+    image: hydra-cloud-orchestrator:latest
+    http_port: 8080
+    instance_count: 1
+    routes:
+      - path: /
+    envs:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "8080"
+
+  - name: line-styler
+    image: hydra-line-styler:latest
+    http_port: 80
+    instance_count: 1
+    routes:
+      - path: /styler
+
+  - name: api-catalog
+    image: hydra-api-catalog:latest
+    http_port: 3000
+    instance_count: 1
+    routes:
+      - path: /legacy-api
+    envs:
+      - key: NODE_ENV
+        value: production
