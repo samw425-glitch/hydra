@@ -1,0 +1,11 @@
+name: hydra-simple
+services:
+- name: web
+  image:
+    registry: docker.io
+    repository: samw425glitch/hydra-cloud-orchestrator
+    tag: latest
+  instance_count: 1
+  http_port: 8080
+  routes:
+  - path: /

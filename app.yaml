@@ -1,0 +1,37 @@
+name: hydra-production
+services:
+- name: hydra-cloud-orchestrator
+  image:
+    registry: docker.io
+    repository: samw425glitch/hydra-cloud-orchestrator
+    tag: latest
+  instance_size_slug: basic-xxs
+  instance_count: 1
+  http_port: 8080
+  routes:
+  - path: /
+
+- name: hydra-line-styler
+  image:
+    registry: docker.io
+    repository: samw425glitch/hydra-line-styler
+    tag: latest
+  instance_size_slug: basic-xxs
+  instance_count: 1
+  http_port: 80
+  routes:
+  - path: /styler
+
+- name: hydra-api-catalog
+  image:
+    registry: docker.io
+    repository: samw425glitch/hydra-api-catalog
+    tag: latest
+  instance_size_slug: basic-xxs
+  instance_count: 1
+  http_port: 3000
+  routes:
+  - path: /api
+  envs:
+  - key: NODE_ENV
+    value: production
