@@ -1,23 +1,27 @@
-# docker-compose.yml
-version: '3.7'
-
 services:
-  traefik:
-    image: "traefik:v2.10"
-    container_name: "traefik"
-    command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
+  website:
+    build:
+      context: ./api-catalog/website
+      dockerfile: Dockerfile
     ports:
-      - "80:80"       # HTTP port
-      - "8081:8080"   # Traefik Dashboard (for debugging)
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-    networks:
-      - web
+      - "31000:3000"
+    environment:
+      - PORT=3000
 
-networks:
-  web:
-    external: true
+  api:
+    build:
+      context: ./api-catalog/api
+      dockerfile: Dockerfile
+    ports:
+      - "41000:4000"
+    environment:
+      - PORT=4000
+
+  utm:
+    build:
+      context: ./api-catalog/utm
+      dockerfile: Dockerfile
+    ports:
+      - "50000:9000"
+    environment:
+      - PORT=9000

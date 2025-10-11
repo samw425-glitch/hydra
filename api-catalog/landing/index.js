@@ -1,10 +1,10 @@
 const http = require('http');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4500;
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type': 'application/json'});
   res.end(JSON.stringify({
-    service: 'worker',
+    service: 'landing',
     port: PORT,
     status: 'running',
     endpoint: req.url,
@@ -13,10 +13,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`🚀 Worker service running on port ${PORT}`);
+  console.log(`🌐 Landing service running on port ${PORT}`);
 });
-
-// Keep existing interval if needed
-setInterval(() => {
-  console.log('Worker heartbeat');
-}, 60000);

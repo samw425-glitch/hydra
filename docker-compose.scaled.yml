@@ -1,0 +1,63 @@
+services:
+  website-31000:
+    build: ./api-catalog/website
+    ports:
+      - "31000:3000"
+    environment:
+      - PORT=3000
+
+  website-31001:
+    build: ./api-catalog/website
+    ports:
+      - "31001:3000"
+    environment:
+      - PORT=3000
+
+  website-31002:
+    build: ./api-catalog/website
+    ports:
+      - "31002:3000"
+    environment:
+      - PORT=3000
+
+  api-41000:
+    build: ./api-catalog/api
+    ports:
+      - "41000:4000"
+    environment:
+      - PORT=4000
+
+  api-41001:
+    build: ./api-catalog/api
+    ports:
+      - "41001:4000"
+    environment:
+      - PORT=4000
+
+  api-41002:
+    build: ./api-catalog/api
+    ports:
+      - "41002:4000"
+    environment:
+      - PORT=4000
+
+  utm-50000:
+    build: ./api-catalog/utm
+    ports:
+      - "50000:9000"
+    environment:
+      - PORT=9000
+
+  utm-50001:
+    build: ./api-catalog/utm
+    ports:
+      - "50001:9000"
+    environment:
+      - PORT=9000
+
+  utm-50002:
+    build: ./api-catalog/utm
+    ports:
+      - "50002:9000"
+    environment:
+      - PORT=9000

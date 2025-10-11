@@ -1,0 +1,67 @@
+services:
+  # Core Services
+  website:
+    build: ./api-catalog/website
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+
+  api:
+    build: ./api-catalog/api
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+
+  utm:
+    build: ./api-catalog/utm
+    ports:
+      - "9000:9000"
+    environment:
+      - PORT=9000
+
+  # SEO Services
+  backlinking:
+    build: ./api-catalog/backlinking
+    ports:
+      - "10000:10000"
+    environment:
+      - PORT=10000
+
+  indexing:
+    build: ./api-catalog/indexing
+    ports:
+      - "11000:11000"
+    environment:
+      - PORT=11000
+
+  # Processing Services
+  worker:
+    build: ./api-catalog/worker
+    ports:
+      - "12000:5000"  # Map host 12000 to container 5000
+    environment:
+      - PORT=5000
+
+  click-tracker:
+    build: ./api-catalog/click-tracker
+    ports:
+      - "13000:7000"  # Map host 13000 to container 7000
+    environment:
+      - PORT=7000
+
+  uploader:
+    build: ./api-catalog/uploader
+    ports:
+      - "14000:6000"  # Map host 14000 to container 6000
+    environment:
+      - PORT=6000
+
+  # Management Service
+  orchestrator:
+    build: ./api-catalog/orchestrator
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
