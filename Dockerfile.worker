@@ -1,0 +1,11 @@
+# 🐳 Hydra Worker Service
+FROM node:18-alpine
+
+WORKDIR /app/worker
+COPY ./worker ./worker
+WORKDIR /app/worker
+
+RUN npm init -y && npm install express
+
+EXPOSE 4002
+CMD ["node","index.js"]

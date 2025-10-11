@@ -1,0 +1,1021 @@
+
+server {
+    listen 80;
+    server_name http://maximize-english-grammar-basics.yourdomainhere.com:30000.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-advanced-startup-marketing-strategies.yourdomainhere.com:30001.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-docker-container-tips.yourdomainhere.com:30002.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-ai-tools-for-productivity.yourdomainhere.com:30003.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-remote-work-best-practices.yourdomainhere.com:30004.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-marketing-automation-workflows.yourdomainhere.com:30005.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-e-commerce-seo-tactics.yourdomainhere.com:30006.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-digital-advertising-trends-2025.yourdomainhere.com:30007.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-python-scripting-for-beginners.yourdomainhere.com:30008.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-chatgpt-ai-copywriting.yourdomainhere.com:30009.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-content-marketing-for-saas.yourdomainhere.com:30010.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-affiliate-marketing-secrets.yourdomainhere.com:30011.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-time-management-hacks.yourdomainhere.com:30012.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-no-code-tools-for-startups.yourdomainhere.com:30013.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-cybersecurity-essentials.yourdomainhere.com:30014.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-data-analysis-with-python.yourdomainhere.com:30015.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-email-marketing-campaigns.yourdomainhere.com:30016.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-ux-design-tips.yourdomainhere.com:30017.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-social-media-growth-strategies.yourdomainhere.com:30018.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-freelancing-tips-for-beginners.yourdomainhere.com:30019.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-virtual-team-management.yourdomainhere.com:30020.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-business-analytics-basics.yourdomainhere.com:30021.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-ai-in-healthcare.yourdomainhere.com:30022.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-productivity-apps-comparison.yourdomainhere.com:30023.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-startup-funding-strategies.yourdomainhere.com:30024.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-cloud-computing-essentials.yourdomainhere.com:30025.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-machine-learning-for-beginners.yourdomainhere.com:30026.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-seo-copywriting-tips.yourdomainhere.com:30027.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-digital-marketing-kpis.yourdomainhere.com:30028.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-content-repurposing-hacks.yourdomainhere.com:30029.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-ai-writing-assistants.yourdomainhere.com:30030.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-growth-hacking-techniques.yourdomainhere.com:30031.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-python-automation-projects.yourdomainhere.com:30032.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-effective-presentation-skills.yourdomainhere.com:30033.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-remote-collaboration-tools.yourdomainhere.com:30034.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-customer-retention-strategies.yourdomainhere.com:30035.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-project-management-basics.yourdomainhere.com:30036.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-agile-methodology-tips.yourdomainhere.com:30037.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-video-marketing-trends.yourdomainhere.com:30038.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-voice-search-optimization.yourdomainhere.com:30039.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-influencer-marketing-tactics.yourdomainhere.com:30040.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-business-intelligence-tools.yourdomainhere.com:30041.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-chatbot-integration-tips.yourdomainhere.com:30042.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-marketing-analytics-101.yourdomainhere.com:30043.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-startup-legal-essentials.yourdomainhere.com:30044.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-personal-branding-tips.yourdomainhere.com:30045.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-ai-for-e-commerce.yourdomainhere.com:30046.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-product-launch-checklist.yourdomainhere.com:30047.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-crm-system-comparison.yourdomainhere.com:30048.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-tech-trends-2025.yourdomainhere.com:30049.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-email-list-growth-strategies.yourdomainhere.com:30050.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-content-strategy-frameworks.yourdomainhere.com:30051.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-affiliate-program-optimization.yourdomainhere.com:30052.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-financial-modeling-for-startups.yourdomainhere.com:30053.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-growth-metrics-you-must-track.yourdomainhere.com:30054.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-conversion-rate-optimization-tips.yourdomainhere.com:30055.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-user-onboarding-best-practices.yourdomainhere.com:30056.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-marketing-automation-tools.yourdomainhere.com:30057.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-seo-keyword-research-guide.yourdomainhere.com:30058.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-python-data-visualization.yourdomainhere.com:30059.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-web-analytics-basics.yourdomainhere.com:30060.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-startup-pitch-deck-examples.yourdomainhere.com:30061.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-remote-work-productivity-hacks.yourdomainhere.com:30062.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-ai-content-generation-tips.yourdomainhere.com:30063.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-e-commerce-platform-comparison.yourdomainhere.com:30064.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-freelance-marketplace-strategies.yourdomainhere.com:30065.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-productivity-mindset-techniques.yourdomainhere.com:30066.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-lead-generation-strategies.yourdomainhere.com:30067.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-ai-customer-support-bots.yourdomainhere.com:30068.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-social-media-content-calendar.yourdomainhere.com:30069.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-marketing-funnel-optimization.yourdomainhere.com:30070.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-time-saving-automation-tips.yourdomainhere.com:30071.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-python-scripting-for-automation.yourdomainhere.com:30072.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-startup-growth-case-studies.yourdomainhere.com:30073.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-brand-storytelling-tips.yourdomainhere.com:30074.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-online-course-creation-strategies.yourdomainhere.com:30075.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-influencer-outreach-templates.yourdomainhere.com:30076.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-email-automation-workflows.yourdomainhere.com:30077.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-digital-marketing-tools-comparison.yourdomainhere.com:30078.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-ux-research-methods.yourdomainhere.com:30079.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-website-speed-optimization.yourdomainhere.com:30080.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-ai-productivity-tools-comparison.yourdomainhere.com:30081.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-freelance-contract-essentials.yourdomainhere.com:30082.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-marketing-campaign-analysis.yourdomainhere.com:30083.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-personal-productivity-systems.yourdomainhere.com:30084.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-ai-trends-in-marketing.yourdomainhere.com:30085.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-project-management-tools-review.yourdomainhere.com:30086.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-startup-customer-research.yourdomainhere.com:30087.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-content-repurposing-templates.yourdomainhere.com:30088.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-growth-hacking-case-studies.yourdomainhere.com:30089.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-python-automation-scripts.yourdomainhere.com:30090.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-effective-webinar-strategies.yourdomainhere.com:30091.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-remote-team-building-activities.yourdomainhere.com:30092.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-conversion-funnel-best-practices.yourdomainhere.com:30093.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://unlock-affiliate-marketing-campaigns.yourdomainhere.com:30094.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://optimize-email-newsletter-optimization.yourdomainhere.com:30095.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://maximize-digital-product-launch-tips.yourdomainhere.com:30096.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://learn-ai-chatbot-best-practices.yourdomainhere.com:30097.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://strengthen-marketing-automation-examples.yourdomainhere.com:30098.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://boost-content-marketing-analytics.yourdomainhere.com:30099.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://discover-e-commerce-sales-optimization.yourdomainhere.com:30100.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+server {
+    listen 80;
+    server_name http://master-startup-idea-validation.yourdomainhere.com:30101.yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}

@@ -1,19 +1,18 @@
 {
-  "name": "hydra",
+  "name": "hydra-cloud-orchestrator",
   "version": "1.0.0",
-  "description": "Hydra is a Docker-based orchestration system that manages multiple service templates including landing pages, background workers, and API services.",
-  "main": "hydra-spawner.js",
-  "type": "module",
+  "description": "Cloud-native version of Hydra orchestrator",
+  "main": "cloud-orchestrator.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node cloud-orchestrator.js",
+    "dev": "node cloud-orchestrator.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "csv-parse": "^6.1.0",
-    "csv-parser": "^3.2.0",
-    "dockerode": "^4.0.9",
-    "get-port": "^5.1.1"
+    "express": "^4.18.2",
+    "google-trends-api": "^4.9.2",
+    "markdown-it": "^14.1.0",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^24.24.0"
   }
 }

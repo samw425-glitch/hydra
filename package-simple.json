@@ -1,0 +1,12 @@
+{
+  "name": "api-catalog-simple",
+  "version": "1.0.0",
+  "description": "Simple API Catalog",
+  "main": "simple-app.cjs",
+  "scripts": {
+    "start": "node simple-app.cjs"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,11 @@
+# 🐳 Hydra Landing Service
+FROM node:18-alpine
+
+WORKDIR /app/landing
+COPY ./landing ./landing
+WORKDIR /app/landing
+
+RUN npm init -y && npm install express
+
+EXPOSE 4001
+CMD ["node", "index.js"]

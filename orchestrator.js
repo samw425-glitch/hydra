@@ -1,89 +1,51 @@
-// ~/hydra/orchestrator.js
+import showSplash from './splash.js';
 
-import Docker from 'dockerode';
-import path from 'path';
-import fs from 'fs';
+(async () => {
+    await showSplash();
 
-const docker = new Docker({ socketPath: '/var/run/docker.sock' });
+    // --- Existing orchestrator code below ---
+    console.log('🎉 Launched all workers!');
+    // your worker startup code...
+})();
 
-// Define your templates
-const templates = [
-  { name: 'click-tracker', dockerfile: 'Dockerfile.click', port: 4000 },
-  { name: 'landing', dockerfile: 'Dockerfile.landing', port: 4001 },
-  { name: 'worker', dockerfile: 'Dockerfile.worker', port: 4002 }
-];
 
-// Build a single image
-async function buildImage(template) {
-  const dockerfilePath = path.resolve(template.dockerfile);
-  if (!fs.existsSync(dockerfilePath)) {
-    throw new Error(`Dockerfile not found: ${dockerfilePath}`);
+// orchestrator.js
+import figlet from "figlet";
+import { exec } from "child_process";
+
+// ----- Splash Screen -----
+figlet.text("Hydra Orchestrator", {
+  font: "Slant",
+}, (err, data) => {
+  if (err) {
+    console.error("Figlet error:", err);
+    return;
   }
+  console.log(data);
+  startWorkers();
+});
 
-  console.log(`\n🚀 Building image for ${template.name}...`);
+// ----- Worker orchestration -----
+function startWorkers() {
+  const startPort = 32095;
+  const workerCount = 5; // adjust how many workers you want
 
-  const stream = await docker.buildImage(
-    {
-      context: path.resolve('./'),
-      src: [template.dockerfile]
-    },
-    {
-      t: `hydra-${template.name}:latest`,
-      dockerfile: template.dockerfile
-    }
-  );
+  for (let i = 0; i < workerCount; i++) {
+    const port = startPort + i;
+    const logPath = `/home/samunbunto/hydra/api-catalog/logs/worker/worker-${port}.log`;
 
-  await new Promise((resolve, reject) => {
-    docker.modem.followProgress(stream, (err, res) =>
-      err ? reject(err) : resolve(res)
-    );
-  });
-
-  console.log(`✅ Built image: hydra-${template.name}:latest`);
-}
-
-// Run container from built image
-async function runContainer(template) {
-  console.log(`💡 Starting container for ${template.name} on port ${template.port}...`);
-
-  // Check if container exists, remove if so
-  try {
-    const existing = docker.getContainer(template.name);
-    await existing.remove({ force: true });
-  } catch (e) {
-    // Ignore if container doesn't exist
-  }
-
-  const container = await docker.createContainer({
-    name: template.name,
-    Image: `hydra-${template.name}:latest`,
-    Tty: true,
-    HostConfig: {
-      PortBindings: {
-        "3000/tcp": [{ HostPort: template.port.toString() }]
+    // This spawns a "dummy" worker; replace with your actual command
+    const cmd = `echo "Starting worker on port ${port}" >> ${logPath}`;
+    
+    exec(cmd, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Worker ${port} error:`, error);
+        return;
       }
-    },
-    ExposedPorts: {
-      "3000/tcp": {}
-    }
-  });
-
-  await container.start();
-  console.log(`✅ Container ${template.name} running at http://localhost:${template.port}`);
-}
-
-// Build all images sequentially
-async function buildAll() {
-  for (const tpl of templates) {
-    await buildImage(tpl);
-    await runContainer(tpl);
+      if (stderr) console.error(`Worker ${port} stderr:`, stderr);
+      console.log(`🚀 Worker instance started on port ${port} → ${logPath}`);
+    });
   }
-}
 
-// Run the orchestrator
-buildAll()
-  .then(() => console.log('\n🎉 All images built and containers started!'))
-  .catch(err => {
-    console.error('\n❌ Orchestrator error:', err);
-    process.exit(1);
-  });
+  console.log("🎉 Launched all workers!");
+}

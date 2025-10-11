@@ -1,15 +1,23 @@
-name: hydra3-app               # <- this is required
-region: nyc3                   # optional but recommended
+name: hydra-orchestrator
 services:
-  - name: redirect-service
-    image:
-      registry: registry.digitalocean.com/hydra3
-      repository: api-catalog
-      tag: latest
-      registry_type: DOCR
-    run_command: "node redirect-service.js"
-    instance_size_slug: basic-xxs
+  - name: api
+    image: samw425glitch/api-catalog:latest
+    run_command: node orchestrator.js
+    http_port: 8080
     instance_count: 1
-    http_port: 4005
     routes:
       - path: /
+    
+  - name: landing-service
+    image: hydra-landing:latest
+    http_port: 80
+    instance_count: 2
+    routes:
+      - path: /landing
+    
+  - name: click-tracker
+    image: hydra-click-tracker:latest  
+    http_port: 4000
+    instance_count: 3
+    routes:
+      - path: /tracker

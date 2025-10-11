@@ -1,0 +1,8 @@
+{
+  "name": "hydra-worker",
+  "version": "1.0.0",
+  "main": "worker.js",
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}
