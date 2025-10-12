@@ -1,0 +1,24 @@
+FROM redis:7.2-alpine
+
+# Create non-root user
+RUN addgroup -g 1001 -S redis && \
+    adduser -S -D -H -u 1001 -h /var/empty -s /sbin/nologin -G redis -g redis redis
+
+# Copy custom configuration
+COPY redis.conf /usr/local/etc/redis/redis.conf
+
+# Set proper ownership
+RUN chown -R redis:redis /usr/local/etc/redis/ /data
+
+# Switch to non-root user
+USER redis
+
+# Expose Redis port
+EXPOSE 6379
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD redis-cli ping || exit 1
+
+# Start Redis with custom config
+CMD ["redis-server", "/usr/local/etc/redis/redis.conf"]

@@ -3,6 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydra Landing Page</title>
+    <meta name="description" content="Welcome to Hydra - Multi-Head Container Orchestrator">
+    <meta name="keywords" content="hydra, containers, orchestrator, microservices">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:title" content="Hydra Landing Page">
+    <meta property="og:description" content="Welcome to Hydra - Multi-Head Container Orchestrator">
+    <meta property="og:image" content="/assets/hydra-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-domain.com/">
+    <meta property="twitter:title" content="Hydra Landing Page">
+    <meta property="twitter:description" content="Welcome to Hydra - Multi-Head Container Orchestrator">
+    <meta property="twitter:image" content="/assets/hydra-twitter.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/css/styles.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M12 22V12" stroke="currentColor" stroke-width="2"/>
+                        <path d="M2 7L12 12L22 7" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span class="logo-text">Hydra</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#docs" class="nav-link">Documentation</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Multi-Head Container
+                    <span class="gradient-text">Orchestrator</span>
+                </h1>
+                <p class="hero-description">
+                    Deploy, scale, and manage containerized applications with ease. 
+                    Hydra provides powerful orchestration capabilities for modern microservices architecture.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="trackClick('cta-primary')">
+                        Get Started
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-secondary" onclick="trackClick('cta-docs')">
+                        View Documentation
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="container-grid">
+                    <div class="container-box active" data-service="orchestrator">Orchestrator</div>
+                    <div class="container-box" data-service="landing">Landing</div>
+                    <div class="container-box" data-service="worker">Worker</div>
+                    <div class="container-box" data-service="api">API Gateway</div>
+                    <div class="container-box" data-service="redis">Redis</div>
+                    <div class="container-box" data-service="postgres">PostgreSQL</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Deploy containers in seconds with optimized Docker images and efficient orchestration.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Highly Reliable</h3>
+                    <p>Built-in health checks, automatic failover, and comprehensive monitoring ensure uptime.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M16 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H8" stroke="currentColor" stroke-width="2"/>
+                            <path d="M15 2H9C8.44772 2 8 2.44772 8 3V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3C16 2.44772 15.5523 2 15 2Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 11V17M9 14H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Easy to Scale</h3>
+                    <p>Horizontal scaling with intelligent load balancing and resource optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Available Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Orchestrator</h3>
+                    <p>Central control plane for managing all container deployments and configurations.</p>
+                    <div class="service-status">
+                        <span class="status-indicator active"></span>
+                        <span class="status-text">Active</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>API Gateway</h3>
+                    <p>Secure entry point with authentication, rate limiting, and request routing.</p>
+                    <div class="service-status">
+                        <span class="status-indicator active"></span>
+                        <span class="status-text">Active</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Landing Pages</h3>
+                    <p>High-performance static websites with analytics and tracking capabilities.</p>
+                    <div class="service-status">
+                        <span class="status-indicator active"></span>
+                        <span class="status-text">Active</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Background Workers</h3>
+                    <p>Scalable task processing with queue management and retry logic.</p>
+                    <div class="service-status">
+                        <span class="status-indicator active"></span>
+                        <span class="status-text">Active</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Click Tracker</h3>
+                    <p>Real-time click tracking and analytics with detailed reporting.</p>
+                    <div class="service-status">
+                        <span class="status-indicator active"></span>
+                        <span class="status-text">Active</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Monitoring</h3>
+                    <p>Comprehensive monitoring dashboard with metrics and alerting.</p>
+                    <div class="service-status">
+                        <span class="status-indicator pending"></span>
+                        <span class="status-text">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-logo">
+                        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M12 22V12" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 7L12 12L22 7" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="logo-text">Hydra</span>
+                    </div>
+                    <p>Multi-Head Container Orchestrator</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#docs">Documentation</a></li>
+                            <li><a href="#api">API Reference</a></li>
+                            <li><a href="#support">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hydra. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12C0 17.31 3.435 21.795 8.205 23.385C8.805 23.49 9.03 23.13 9.03 22.815C9.03 22.53 9.015 21.585 9.015 20.55C6 21.135 5.22 19.845 4.98 19.17C4.845 18.825 4.26 17.7 3.75 17.415C3.33 17.19 2.73 16.605 3.735 16.59C4.68 16.575 5.355 17.49 5.58 17.85C6.66 19.725 8.385 19.215 9.075 18.9C9.18 18.12 9.495 17.595 9.84 17.295C7.17 16.995 4.38 15.96 4.38 11.37C4.38 10.065 4.845 8.985 5.61 8.145C5.49 7.845 5.07 6.615 5.73 4.965C5.73 4.965 6.735 4.65 9.03 6.195C9.99 5.925 11.01 5.79 12.03 5.79C13.05 5.79 14.07 5.925 15.03 6.195C17.325 4.635 18.33 4.965 18.33 4.965C18.99 6.615 18.57 7.845 18.45 8.145C19.215 8.985 19.68 10.05 19.68 11.37C19.68 15.975 16.875 16.995 14.205 17.295C14.64 17.67 15.015 18.39 15.015 19.515C15.015 21.12 15 22.41 15 22.815C15 23.13 15.225 23.505 15.825 23.385C20.565 21.795 24 17.295 24 12C24 5.37 18.63 0 12 0Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Analytics Script -->
+    <script>
+        // Click tracking function
+        function trackClick(element) {
+            fetch('/analytics', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    event: 'click',
+                    element: element,
+                    timestamp: new Date().toISOString(),
+                    page: window.location.pathname
+                })
+            }).catch(err => console.log('Analytics error:', err));
+            
+            console.log('Click tracked:', element);
+        }
+
+        // Page view tracking
+        fetch('/analytics', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                event: 'page_view',
+                page: window.location.pathname,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent
+            })
+        }).catch(err => console.log('Analytics error:', err));
+
+        // Mobile menu toggle
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Container animation
+        let currentContainer = 0;
+        const containers = document.querySelectorAll('.container-box');
+        setInterval(() => {
+            containers[currentContainer].classList.remove('active');
+            currentContainer = (currentContainer + 1) % containers.length;
+            containers[currentContainer].classList.add('active');
+        }, 2000);
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => console.log('SW registered:', registration))
+                .catch(error => console.log('SW registration failed:', error));
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hydra Landing</title>
     <link rel="stylesheet" href="style.css">
 </head>

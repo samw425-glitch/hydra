@@ -1,0 +1,30 @@
+FROM postgres:16-alpine
+
+# Install additional extensions
+RUN apk add --no-cache postgresql-contrib
+
+# Copy initialization scripts
+COPY init-scripts/ /docker-entrypoint-initdb.d/
+
+# Copy custom configuration
+COPY postgresql.conf /etc/postgresql/postgresql.conf
+
+# Create data directory
+RUN mkdir -p /var/lib/postgresql/data && \
+    chown -R postgres:postgres /var/lib/postgresql
+
+# Expose PostgreSQL port
+EXPOSE 5432
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD pg_isready -U $POSTGRES_USER -d $POSTGRES_DB || exit 1
+
+# Set default environment variables
+ENV POSTGRES_DB=hydra
+ENV POSTGRES_USER=hydra_user
+ENV POSTGRES_PASSWORD=hydra_secure_password
+ENV PGDATA=/var/lib/postgresql/data
+
+# Start PostgreSQL
+CMD ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
