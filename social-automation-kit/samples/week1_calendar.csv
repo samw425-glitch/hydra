@@ -1,0 +1,10 @@
+date,platform,post_type,idea,caption,media_asset,hashtags,cta,link,utm_campaign,status,notes
+2025-10-20,Twitter (X),single,Intro offer,"Meet {{BusinessName}} — helping {{City}} with {{Service}}. This week: 10% off for first-time clients.",image,#{{City}} #{{Service}},"DM “start”","https://example.com","launch","Approved",
+2025-10-20,Facebook,single,Intro offer,"We’re helping {{City}} with {{Service}}. New to us? 10% off this week.",image,,"Book now","https://example.com","launch","Approved",
+2025-10-20,Instagram,single,Intro offer,"New here? We help {{City}} with {{Service}} → 10% off for first-time clients this week.",image,#{{City}} #{{Service}} #SmallBusiness,"Tap link in bio",,"launch","Approved",
+2025-10-22,Twitter (X),single,Educational,"3 quick {{Service}} tips to save money in {{City}} this month:",image,#{{Service}},"DM “tips” for the checklist","https://example.com","tips","Approved",
+2025-10-22,Facebook,single,Educational,"3 {{Service}} tips to save money this month in {{City}}.",image,,"Get the checklist","https://example.com","tips","Approved",
+2025-10-22,Instagram,carousel,Educational,"3 {{Service}} tips for {{City}} this month👇",carousel,#{{City}} #{{Service}},"DM “tips” for the PDF",,"tips","Approved",
+2025-10-24,Twitter (X),single,Proof,"Before → After: How we helped a {{City}} client with {{Service}}.",image,#{{City}} #{{Service}},"DM “case” to see the story","https://example.com","proof","Approved",
+2025-10-24,Facebook,single,Proof,"Before & after: a recent {{Service}} result in {{City}}.",image,,"Learn more","https://example.com","proof","Approved",
+2025-10-24,Instagram,carousel,Proof,"Before → After: recent {{Service}} result in {{City}}.",carousel,#{{City}} #{{Service}},"DM “case” to see details",,"proof","Approved",

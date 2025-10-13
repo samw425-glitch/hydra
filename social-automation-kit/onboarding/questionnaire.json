@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Client Onboarding",
+  "type": "object",
+  "properties": {
+    "businessName": {"type": "string"},
+    "website": {"type": "string"},
+    "location": {"type": "string"},
+    "services": {"type": "array", "items": {"type": "string"}},
+    "targetAudience": {"type": "string"},
+    "tone": {"type": "array", "items": {"type": "string"}},
+    "wordsToUse": {"type": "array", "items": {"type": "string"}},
+    "wordsToAvoid": {"type": "array", "items": {"type": "string"}},
+    "assetsLinks": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "facebookPageUrl": {"type": "string"},
+    "instagramHandle": {"type": "string"},
+    "twitterHandle": {"type": "string"},
+    "scheduler": {"type": "string", "enum": ["Buffer","Publer","Later"]},
+    "primaryGoal": {"type": "string", "enum": ["Inquiries","Bookings","Website Clicks","Followers"]},
+    "secondaryGoal": {"type": "string"},
+    "competitors": {"type": "array", "items": {"type": "string"}},
+    "approverName": {"type": "string"},
+    "approvalChannel": {"type": "string", "enum": ["Email","Slack","Notion"]},
+    "approvalSLAHours": {"type": "integer", "default": 48 },
+    "timezone": {"type": "string"}
+  },
+  "required": ["businessName","services","primaryGoal","timezone","scheduler"]
+}
