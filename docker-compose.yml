@@ -1,27 +1,50 @@
-services:
-  website:
-    build:
-      context: ./api-catalog/website
-      dockerfile: Dockerfile
-    ports:
-      - "31000:3000"
-    environment:
-      - PORT=3000
+version: "3.9"
 
-  api:
+networks:
+  hydra-net:
+    driver: bridge
+
+services:
+  # API1
+  api1:
     build:
-      context: ./api-catalog/api
-      dockerfile: Dockerfile
+      context: ./api1
+    container_name: hydra-api1
     ports:
       - "41000:4000"
-    environment:
-      - PORT=4000
+    networks:
+      - hydra-net
 
-  utm:
+  # API2
+  api2:
     build:
-      context: ./api-catalog/utm
-      dockerfile: Dockerfile
+      context: ./api2
+    container_name: hydra-api2
     ports:
-      - "50000:9000"
-    environment:
-      - PORT=9000
+      - "41001:4001"
+    networks:
+      - hydra-net
+
+  # API3
+  api3:
+    build:
+      context: ./api3
+    container_name: hydra-api3
+    ports:
+      - "41002:4002"
+    networks:
+      - hydra-net
+
+  # Website (Nginx + frontend)
+  website:
+    build:
+      context: ./hydra-website
+    container_name: hydra-website
+    ports:
+      - "3000:3000"
+    networks:
+      - hydra-net
+    depends_on:
+      - api1
+      - api2
+      - api3

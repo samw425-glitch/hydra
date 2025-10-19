@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  website:
+    build: ./hydra-website
+    container_name: hydra-website
+    ports:
+      - "3000:3000"
+    networks:
+      - hydra-net
+    depends_on:
+      - api1
+      - api2
+      - api3
+
+  api1:
+    build: ./api1
+    container_name: hydra-api1
+    ports:
+      - "4000:4000"
+    networks:
+      - hydra-net
+
+  api2:
+    build: ./api2
+    container_name: hydra-api2
+    ports:
+      - "4001:4001"
+    networks:
+      - hydra-net
+
+  api3:
+    build: ./api3
+    container_name: hydra-api3
+    ports:
+      - "4002:4002"
+    networks:
+      - hydra-net
+
+networks:
+  hydra-net:
+    driver: bridge

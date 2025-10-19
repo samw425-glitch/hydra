@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  website:
+    build: .
+    container_name: hydra-website
+    ports:
+      - "3000:3000"   # maps container port 3000 to host port 3000
+    networks:
+      - hydra-net
+    depends_on:
+      - api1
+      - api2
+      - api3
+
+networks:
+  hydra-net:
+    external: true   # assumes you already have 'hydra-net' from dashboard

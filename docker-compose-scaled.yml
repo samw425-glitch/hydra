@@ -1,63 +1,124 @@
+version: "3.9"
+
 services:
   website1:
-    build: ./api-catalog/website
+    image: hydra-website
+    container_name: hydra-website1
     ports:
       - "31000:3000"
+    volumes:
+      - ./hydra-website:/app    # bind mount local website folder
     environment:
-      - PORT=3000
+      NODE_ENV: development
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   website2:
-    build: ./api-catalog/website  
+    image: hydra-website
+    container_name: hydra-website2
     ports:
       - "31001:3000"
+    volumes:
+      - ./hydra-website:/app
     environment:
-      - PORT=3000
+      NODE_ENV: development
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   website3:
-    build: ./api-catalog/website
+    image: hydra-website
+    container_name: hydra-website3
     ports:
       - "31002:3000"
+    volumes:
+      - ./hydra-website:/app
     environment:
-      - PORT=3000
+      NODE_ENV: development
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
+  # Other Hydra services
   api1:
-    build: ./api-catalog/api
+    image: hydra-api
+    container_name: hydra-api1
     ports:
       - "41000:4000"
+    depends_on:
+      - website1
     environment:
-      - PORT=4000
+      NODE_ENV: development
 
   api2:
-    build: ./api-catalog/api
+    image: hydra-api
+    container_name: hydra-api2
     ports:
       - "41001:4000"
+    depends_on:
+      - website2
     environment:
-      - PORT=4000
+      NODE_ENV: development
 
   api3:
-    build: ./api-catalog/api
+    image: hydra-api
+    container_name: hydra-api3
     ports:
       - "41002:4000"
+    depends_on:
+      - website3
     environment:
-      - PORT=4000
+      NODE_ENV: development
 
   utm1:
-    build: ./api-catalog/utm
+    image: hydra-utm
+    container_name: hydra-utm1
     ports:
       - "50000:9000"
-    environment:
-      - PORT=9000
 
   utm2:
-    build: ./api-catalog/utm
+    image: hydra-utm
+    container_name: hydra-utm2
     ports:
       - "50001:9000"
-    environment:
-      - PORT=9000
 
   utm3:
-    build: ./api-catalog/utm
+    image: hydra-utm
+    container_name: hydra-utm3
     ports:
       - "50002:9000"
-    environment:
-      - PORT=9000
+
+  click-tracker:
+    image: hydra-click-tracker
+    container_name: hydra-click-tracker
+    ports:
+      - "13000:7000"
+
+  worker:
+    image: hydra-worker
+    container_name: hydra-worker
+    ports:
+      - "12000:5000"
+
+  uploader:
+    image: hydra-uploader
+    container_name: hydra-uploader
+    ports:
+      - "14000:6000"
+
+  indexing:
+    image: hydra-indexing
+    container_name: hydra-indexing
+    ports:
+      - "11000:11000"
+
+  orchestrator:
+    image: hydra-orchestrator
+    container_name: hydra-orchestrator

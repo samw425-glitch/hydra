@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hydra Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Hydra Dashboard</h1>
+    <p>Monitor your users and data from all Hydra APIs</p>
+  </header>
+
+  <main>
+    <section class="api-section">
+      <h2>Users (API1)</h2>
+      <button onclick="loadUsers()">Refresh</button>
+      <ul id="user-list">No data available</ul>
+    </section>
+
+    <section class="api-section">
+      <h2>Data from API2</h2>
+      <button onclick="loadData2()">Refresh</button>
+      <ul id="data-list">No data available</ul>
+    </section>
+
+    <section class="api-section">
+      <h2>Data from API3</h2>
+      <button onclick="loadData3()">Refresh</button>
+      <ul id="data3-list">No data available</ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Hydra Dashboard. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

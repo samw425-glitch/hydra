@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  web:
+    build: ./hydra-dashboard
+    container_name: hydra-dashboard
+    ports:
+      - "8080:80"
+    depends_on:
+      - api1
+      - api2
+      - api3
+    networks:
+      - hydra-net
+
+  api1:
+    build: ../api1
+    container_name: hydra-api1
+    ports:
+      - "41000:4000"
+    networks:
+      - hydra-net
+
+  api2:
+    build: ../api2
+    container_name: hydra-api2
+    ports:
+      - "41001:4001"
+    networks:
+      - hydra-net
+
+  api3:
+    build: ../api3     # <-- fixed typo 'bulid'
+    container_name: hydra-api3
+    ports:
+      - "41002:4002"
+    networks:
+      - hydra-net
+
+networks:
+  hydra-net:
+    driver: bridge
+
