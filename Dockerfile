@@ -1,18 +1,9 @@
-# Dockerfile.landing
-FROM node:20-alpine
+FROM python:3.11-slim
 
 WORKDIR /app
+COPY . /app
 
-# Copy landing template and public HTML
-COPY ./template/ ./template/
-COPY ../public/html/ ./public/html/
-
-# Install optional dependencies (e.g., markdown-it)
-RUN npm install markdown-it
-
-# Serve static content
-RUN npm install -g serve
+RUN pip install --no-cache-dir fastapi uvicorn openai
 
 EXPOSE 8080
-CMD ["serve", "-s", "public/html", "-l", "8080"]
-
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]

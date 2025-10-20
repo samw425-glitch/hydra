@@ -1,0 +1,19 @@
+services:
+  hydra-api1:
+    build: ./api1
+    container_name: hydra-api1
+    ports:
+      - "41000:4000"
+  hydra-api2:
+    build: ./api2
+    container_name: hydra-api2
+    ports:
+      - "41001:4001"
+  hydra-website:
+    build: ./website
+    container_name: hydra-website
+    ports:
+      - "3000:3000"
+    depends_on:
+      - hydra-api1
+      - hydra-api2

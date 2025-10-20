@@ -4,37 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hydra Dashboard</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #f5f5f5; color: #333; }
+    h1, h2 { color: #2c3e50; }
+    ul { list-style-type: none; padding: 0; }
+    li { background: #ecf0f1; margin: 0.3rem 0; padding: 0.5rem; border-radius: 4px; }
+    button { margin: 0.5rem 0; padding: 0.4rem 0.8rem; cursor: pointer; border: none; border-radius: 4px; background: #3498db; color: white; }
+    button:hover { background: #2980b9; }
+    section { margin-bottom: 2rem; }
+    footer { margin-top: 2rem; font-size: 0.8rem; text-align: center; color: #777; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Hydra Dashboard</h1>
-    <p>Monitor your users and data from all Hydra APIs</p>
-  </header>
+  <h1>Hydra Dashboard</h1>
+  <p>Monitor your users and data from all Hydra APIs</p>
 
-  <main>
-    <section class="api-section">
-      <h2>Users (API1)</h2>
-      <button onclick="loadUsers()">Refresh</button>
-      <ul id="user-list">No data available</ul>
-    </section>
+  <section>
+    <h2>Users (API1)</h2>
+    <button onclick="loadUsers()">Refresh</button>
+    <ul id="user-list">
+      <li>No users found</li>
+    </ul>
+  </section>
 
-    <section class="api-section">
-      <h2>Data from API2</h2>
-      <button onclick="loadData2()">Refresh</button>
-      <ul id="data-list">No data available</ul>
-    </section>
+  <section>
+    <h2>Data from API2</h2>
+    <button onclick="loadData2()">Refresh</button>
+    <ul id="data-list">
+      <li>No data found in API2</li>
+    </ul>
+  </section>
 
-    <section class="api-section">
-      <h2>Data from API3</h2>
-      <button onclick="loadData3()">Refresh</button>
-      <ul id="data3-list">No data available</ul>
-    </section>
-  </main>
+  <section>
+    <h2>Data from API3</h2>
+    <button onclick="loadData3()">Refresh</button>
+    <ul id="data3-list">
+      <li>No data found in API3</li>
+    </ul>
+  </section>
 
-  <footer>
-    <p>© 2025 Hydra Dashboard. All rights reserved.</p>
-  </footer>
+  <footer>© 2025 Hydra Dashboard. All rights reserved.</footer>
 
   <script src="js/main.js"></script>
 </body>
